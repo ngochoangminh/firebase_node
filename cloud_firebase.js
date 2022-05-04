@@ -1,19 +1,26 @@
-var serviceAccount = require("./ohio-chat-app-firebase-adminsdk-ipri1-cc309fa2e0.json");
+var serviceAccount = require("./ohio.json");
 const admin = require('firebase-admin');
-const { initializeApp, cert } = require('firebase-admin/app');
-const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
+require('dotenv').config();
 
-initializeApp(
-  {credential: cert(serviceAccount),}
-);
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://ohio-chat-app-default-rtdb.asia-southeast1.firebasedatabase.app"
+});
 
-const db = getFirestore();
-// const dbs = admin.getFirestore();
-// const msg = db.collection('users').doc('5CTqNn3sHVZrbk4yr5nU1IdaHLk1');
-// msg.(doc => {
-//   console.log(doc.id, '=>', doc.data());
+const db = admin.firestore();
+
+// const list_Converstation = db.collection('messages').listDocuments();
+// list_Converstation.then(doc =>{
+//   doc.forEach(d => {
+//     console.log(d.id)
+//   })
 // });
-// console.log(msg)
 
+// const msg = db.collection('users').get();
+// msg.then(doc => { 
+//   doc.docs.forEach(d => {
+//     console.log(d.data());
+//   }); 
+// });
 
 module.exports=db;
