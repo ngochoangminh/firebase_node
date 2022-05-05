@@ -1,0 +1,29 @@
+{
+  "name": "firebase_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngochoangminh/firebase_node.git"
+  },
+  "author": "ngochoangminh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngochoangminh/firebase_node/issues"
+  },
+  "homepage": "https://github.com/ngochoangminh/firebase_node#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "firebase": "^9.7.0",
+    "firebase-admin": "^10.1.0",
+    "firebase-functions": "^3.20.1",
+    "node-cron": "^3.0.0",
+    "nodemon": "^2.0.16"
+  }
+}
